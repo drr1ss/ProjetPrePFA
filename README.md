@@ -92,5 +92,5 @@ Les instructions d’installation et d’exécution seront ajoutées au fur et �
 
 ## 📜 Licence
 
-Projet académique – usage pédagogique uniquement.
+Projet Pre PFA.
 
