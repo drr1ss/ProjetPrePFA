@@ -85,8 +85,8 @@ Les instructions d’installation et d’exécution seront ajoutées au fur et �
 
 ## 👨‍🎓 Auteur
 
-* **Nom :** Driss Amarti
-* **Filière :** Génie Logiciel
+* **Nom :** Driss Amarti Rifi
+* **Filière :** 3 eme annee IL
 
 ---
 
