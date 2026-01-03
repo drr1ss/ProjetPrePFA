@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showroom Flotte | Ultimate X Prestige</title>
+    <link rel="stylesheet" href="flotte.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <nav>
+        <div class="logo">ULTIMATE X</div>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="flotte.html" class="active">Flotte</a></li>
+            <li><a href="devis.html">Devis</a></li>
+            <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header class="flotte-header">
+            <span class="badge">Disponibilité Immédiate — Fès & Maroc</span>
+            <h1 class="title-impact">NOTRE FLOTTE D'EXCEPTION.</h1>
+            <p>Plus de 100 véhicules de prestige, sport et SUV prêts à être livrés à Fès et partout au Maroc.</p>
+        </header>
+
+        <section class="filters-container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Rechercher un véhicule..." />
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="filter-pills">
+                <button class="pill active">Tout voir</button>
+                <button class="pill">Prestige</button>
+                <button class="pill">SUV & 4x4</button>
+                <button class="pill">Sport</button>
+                <button class="pill">Business</button>
+            </div>
+            <div class="results-count">
+                <span id="total-count">400 véhicules disponibles</span>
+            </div>
+        </section>
+
+        <section class="showroom-grid" id="cars-grid">
+            <!-- Les cartes de véhicules seront générées dynamiquement par JavaScript -->
+        </section>
+
+        <section class="pagination-container">
+            <div class="pagination-info" id="pagination-info"></div>
+            <div class="pagination" id="pagination">
+                <!-- La pagination sera générée dynamiquement par JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ULTIMATE X</h3>
+                <p>La référence de la location de luxe au Maroc, basée à Fès.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Fès</h3>
+                <p>📞 +212 (0) 5 24 33 44 56</p>
+                <p>✉️ contact@ultimatexlocation.ma</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ultimate X Morocco. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="flotte.js"></script>
+</body>
+</html>
