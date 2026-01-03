@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demander un Devis | Ultimate X Location</title>
+    <meta name="description" content="Obtenez un devis personnalisé pour la location de véhicules de luxe au Maroc. Devis gratuit et rapide.">
     <link rel="stylesheet" href="devis.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background-glow"></div>
+    <div class="background-glow-2"></div>
     
-    <nav>
-        <div class="logo">ULTIMATE X</div>
+    <nav id="navbar">
+        <a href="index.html" class="logo">ULTIMATE X</a>
         <ul>
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="#">Flotte</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="flotte.html">Flotte</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="devis.html" class="active">Devis</a></li>
             <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
         </ul>
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
     <main>
@@ -290,6 +298,24 @@
             alert('Merci ! Votre demande de devis a été envoyée. Nous vous répondrons sous 24h.');
             this.reset();
         });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                document.querySelector('nav ul').classList.toggle('mobile-open');
+            });
+        }
     </script>
 </body>
 </html>
