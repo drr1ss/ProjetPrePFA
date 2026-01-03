@@ -4,54 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate X | Location de Prestige Fès & Maroc</title>
+    <meta name="description" content="Location de véhicules de luxe au Maroc. Mercedes, BMW, Porsche, Range Rover. Livraison everywhere au Maroc. Service premium basé à Fès.">
     <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background-glow"></div>
+    <div class="background-glow-2"></div>
     
-    <nav>
-        <div class="logo">ULTIMATE X</div>
+    <nav id="navbar">
+        <a href="index.html" class="logo">ULTIMATE X</a>
         <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Flotte</a></li>
-            <li><a href="#">Services</a></li>
-            <li class="btn-contact"><a href="#">Demander un Devis</a></li>
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="flotte.html">Flotte</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="devis.html">Devis</a></li>
+            <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
         </ul>
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <span class="badge">Siège à Fès — Service National</span>
-                <h1 class="title-impact">L'EXCELLENCE AUTOMOBILE AU MAROC.</h1>
-                <p>Basés à Fès, nous assurons la livraison et le dépôt de nos véhicules d'exception partout au Maroc : Casablanca, Marrakech, Tanger, Agadir.</p>
-                
-                <div class="search-bar">
-                    <div class="input-group">
-                        <label>Lieu de livraison</label>
-                        <input type="text" placeholder="Ville (Partout au Maroc)">
+            <div class="hero-badge">
+                <span>📍</span>
+                <span>Siège à Fès — Service National</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="gradient-text">L'EXCELLENCE</span><br>
+                AUTOMOBILE AU MAROC.
+            </h1>
+            <p class="hero-subtitle">
+                Basés à Fès, nous assurons la livraison et le dépôt de nos véhicules d'exception 
+                partout au Maroc : Casablanca, Marrakech, Tanger, Agadir.
+            </p>
+            
+            <div class="search-container">
+                <form class="search-bar" action="devis.html" method="get">
+                    <div class="search-input-group">
+                        <div class="input-wrapper">
+                            <span class="input-icon">📍</span>
+                            <input type="text" id="lieu" name="lieu" placeholder="Ville de livraison" required autocomplete="off">
+                            <label for="lieu">Lieu</label>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label>Dates</label>
-                        <input type="text" placeholder="Ajouter dates">
+                    <div class="search-input-group">
+                        <div class="input-wrapper">
+                            <span class="input-icon">📅</span>
+                            <input type="date" id="date-debut" name="date-debut" required>
+                            <label for="date-debut">Départ</label>
+                        </div>
                     </div>
-                    <button class="btn-search">Générer Devis & Facture</button>
-                </div>
-                <p class="pre-payment-notice">Devis et facture proforma gratuits avant tout paiement.</p>
+                    <div class="search-input-group">
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔚</span>
+                            <input type="date" id="date-fin" name="date-fin" required>
+                            <label for="date-fin">Retour</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="search-btn">
+                        <span>Générer Devis</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+                <p class="pre-notice">
+                    <span class="check-icon">✓</span>
+                    Devis et facture proforma gratuits avant tout paiement
+                </p>
             </div>
         </section>
 
+        <section class="section-header">
+            <h2 class="section-title">Notre Flotte</h2>
+            <p class="section-subtitle">Découvrez notre collection exclusive de véhicules de prestige</p>
+        </section>
+
         <section class="bento-grid">
-            <div class="card tall" style="background-image: url('https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80')">
-                <div class="card-overlay"> Prestige </div>
+            <div class="card tall card-bg-prestige" onclick="window.location.href='flotte.html?category=prestige'">
+                <div class="card-overlay">
+                    <span class="card-title">Prestige</span>
+                    <span class="card-subtitle">Mercedes, BMW, Porsche</span>
+                </div>
             </div>
-            <div class="card wide" style="background-image: url('https://images.unsplash.com/photo-1549399735-cef2e2c3f638?auto=format&fit=crop&w=800&q=80')">
-                <div class="card-overlay"> SUV & 4x4 Luxe </div>
+            <div class="card wide card-bg-suv" onclick="window.location.href='flotte.html?category=suv'">
+                <div class="card-overlay">
+                    <span class="card-title">SUV & 4x4 Luxe</span>
+                    <span class="card-subtitle">Range Rover, Mercedes G-Class, BMW X7</span>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='services.html'">
+                <div class="card-content">
+                    <span class="card-icon">🚐</span>
+                    <span class="card-name">Service</span>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='services.html'">
+                <div class="card-content">
+                    <span class="card-icon">🚌</span>
+                    <span class="card-name">Tourisme</span>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='flotte.html'">
+                <div class="card-content">
+                    <span class="card-icon">🚘</span>
+                    <span class="card-name">Normal</span>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='flotte.html'">
+                <div class="card-content">
+                    <span class="card-icon">🏍️</span>
+                    <span class="card-name">Moto</span>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='flotte.html'">
+                <div class="card-content">
+                    <span class="card-icon">🚗</span>
+                    <span class="card-name">Compact</span>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='flotte.html?category=sport'">
+                <div class="card-content">
+                    <span class="card-icon">🏎️</span>
+                    <span class="card-name">Sport</span>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='flotte.html'">
+                <div class="card-content">
+                    <span class="card-icon">🚙</span>
+                    <span class="card-name">Citadine</span>
+                </div>
             </div>
             <div class="card small">
                 <h3>FÈS</h3>
-                <p>Local Central</p>
+                <p>Siège Social</p>
             </div>
             <div class="card small">
                 <h3>24/7</h3>
@@ -60,47 +149,129 @@
         </section>
 
         <section class="advantages">
-            <h2 class="section-title">L'ENGAGEMENT ULTIMATE X</h2>
+            <div class="section-header">
+                <h2 class="section-title">L'Engagement Ultimate X</h2>
+            </div>
             <div class="advantages-grid">
-                <div class="advantage">
-                    <div class="icon">🇲🇦</div>
+                <div class="advantage reveal">
+                    <span class="advantage-icon">🇲🇦</span>
                     <h3>Livraison Nationale</h3>
                     <p>Votre véhicule livré à domicile, à l'aéroport ou à votre hôtel dans tout le Maroc.</p>
                 </div>
-                <div class="advantage">
-                    <div class="icon">📜</div>
+                <div class="advantage reveal">
+                    <span class="advantage-icon">📜</span>
                     <h3>Facturation Transparente</h3>
                     <p>Consultez votre facture et votre devis complet avant de valider votre réservation.</p>
                 </div>
-                <div class="advantage">
-                    <div class="icon">📍</div>
+                <div class="advantage reveal">
+                    <span class="advantage-icon">📍</span>
                     <h3>Dépôt Partout</h3>
                     <p>Restituez votre véhicule dans la ville de votre choix, nous nous occupons du reste.</p>
                 </div>
-                <div class="advantage">
-                    <div class="icon">🛡️</div>
+                <div class="advantage reveal">
+                    <span class="advantage-icon">🛡️</span>
                     <h3>Zéro Risque</h3>
                     <p>Assurance premium incluse pour une sérénité totale sur les routes marocaines.</p>
                 </div>
             </div>
         </section>
-
-        <footer>
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>ULTIMATE X</h3>
-                    <p>La référence de la location de luxe au Maroc, basée à Fès.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Fès</h3>
-                    <p>📞 +212 (0) 5 24 XX XX XX</p>
-                    <p>✉️ contact@ultimatex.ma</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Ultimate X Morocco. Tous droits réservés.</p>
-            </div>
-        </footer>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">ULTIMATE X</a>
+                <p>La référence de la location de luxe au Maroc, basée à Fès. Vehicles de prestige avec service premium.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Fès</h4>
+                <p>📞 +212 (0) 5 24 33 44 56</p>
+                <p>✉️ contact@ultimatexlocation.ma</p>
+                <p>📍 Avenue des FAR, Fès, Maroc</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ultimate X Morocco. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        function revealOnScroll() {
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 150;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Mobile menu toggle (for future implementation)
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                document.querySelector('nav ul').classList.toggle('mobile-open');
+            });
+        }
+
+        // Search form handling
+        const dateDebutInput = document.getElementById('date-debut');
+        const dateFinInput = document.getElementById('date-fin');
+        
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        dateDebutInput.setAttribute('min', today);
+        dateFinInput.setAttribute('min', today);
+        
+        // Update date-fin minimum when date-debut changes
+        dateDebutInput.addEventListener('change', function() {
+            dateFinInput.setAttribute('min', this.value);
+            if (dateFinInput.value && dateFinInput.value < this.value) {
+                dateFinInput.value = this.value;
+            }
+        });
+
+        // Form validation
+        const searchForm = document.querySelector('.search-bar');
+        if (searchForm) {
+            searchForm.addEventListener('submit', function(e) {
+                const lieu = document.getElementById('lieu').value.trim();
+                const dateDebut = dateDebutInput.value;
+                const dateFin = dateFinInput.value;
+                
+                if (!lieu || !dateDebut || !dateFin) {
+                    e.preventDefault();
+                    alert('Veuillez remplir tous les champs pour générer votre devis.');
+                    
+                    // Focus on first empty field
+                    if (!lieu) {
+                        document.getElementById('lieu').focus();
+                    } else if (!dateDebut) {
+                        dateDebutInput.focus();
+                    } else {
+                        dateFinInput.focus();
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>

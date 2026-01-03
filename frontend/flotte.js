@@ -479,4 +479,3 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCars();
     renderPagination();
 });
-
