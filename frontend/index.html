@@ -46,17 +46,33 @@
             <div class="search-container">
                 <form class="search-bar" action="devis.html" method="get">
                     <div class="search-input-group">
-                        <input type="text" id="lieu" name="lieu" placeholder="Ville de livraison">
-                        <label for="lieu">Lieu</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📍</span>
+                            <input type="text" id="lieu" name="lieu" placeholder="Ville de livraison" required autocomplete="off">
+                            <label for="lieu">Lieu</label>
+                        </div>
                     </div>
                     <div class="search-input-group">
-                        <input type="text" id="dates" name="dates" placeholder="Dates de location">
-                        <label for="dates">Dates</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📅</span>
+                            <input type="date" id="date-debut" name="date-debut" required>
+                            <label for="date-debut">Départ</label>
+                        </div>
                     </div>
-                    <button type="submit" class="search-btn">Générer Devis</button>
+                    <div class="search-input-group">
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔚</span>
+                            <input type="date" id="date-fin" name="date-fin" required>
+                            <label for="date-fin">Retour</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="search-btn">
+                        <span>Générer Devis</span>
+                        <span class="btn-arrow">→</span>
+                    </button>
                 </form>
                 <p class="pre-notice">
-                    <span>✓</span>
+                    <span class="check-icon">✓</span>
                     Devis et facture proforma gratuits avant tout paiement
                 </p>
             </div>
@@ -213,6 +229,47 @@
         if (menuToggle) {
             menuToggle.addEventListener('click', () => {
                 document.querySelector('nav ul').classList.toggle('mobile-open');
+            });
+        }
+
+        // Search form handling
+        const dateDebutInput = document.getElementById('date-debut');
+        const dateFinInput = document.getElementById('date-fin');
+        
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        dateDebutInput.setAttribute('min', today);
+        dateFinInput.setAttribute('min', today);
+        
+        // Update date-fin minimum when date-debut changes
+        dateDebutInput.addEventListener('change', function() {
+            dateFinInput.setAttribute('min', this.value);
+            if (dateFinInput.value && dateFinInput.value < this.value) {
+                dateFinInput.value = this.value;
+            }
+        });
+
+        // Form validation
+        const searchForm = document.querySelector('.search-bar');
+        if (searchForm) {
+            searchForm.addEventListener('submit', function(e) {
+                const lieu = document.getElementById('lieu').value.trim();
+                const dateDebut = dateDebutInput.value;
+                const dateFin = dateFinInput.value;
+                
+                if (!lieu || !dateDebut || !dateFin) {
+                    e.preventDefault();
+                    alert('Veuillez remplir tous les champs pour générer votre devis.');
+                    
+                    // Focus on first empty field
+                    if (!lieu) {
+                        document.getElementById('lieu').focus();
+                    } else if (!dateDebut) {
+                        dateDebutInput.focus();
+                    } else {
+                        dateFinInput.focus();
+                    }
+                }
             });
         }
     </script>

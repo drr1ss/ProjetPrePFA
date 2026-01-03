@@ -11,7 +11,7 @@
     <div class="background-glow"></div>
     
     <nav>
-        <div class="logo">ULTIMATE X</div>
+        <a href="index.html" class="logo">ULTIMATE X</a>
         <ul>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="flotte.html" class="active">Flotte</a></li>
@@ -19,6 +19,11 @@
             <li><a href="devis.html">Devis</a></li>
             <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
         </ul>
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
     <main>
@@ -75,5 +80,15 @@
     </footer>
 
     <script src="flotte.js"></script>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                document.querySelector('nav ul').classList.toggle('mobile-open');
+                menuToggle.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 </html>
