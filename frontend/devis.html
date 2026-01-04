@@ -263,22 +263,23 @@
             </div>
         </section>
 
-        <footer>
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>ULTIMATE X</h3>
-                    <p>La référence de la location de luxe au Maroc, basée à Fès.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Fès</h3>
-                    <p>📞 +212 (0) 5 24 33 44 56</p>
-                    <p>✉️ contact@ultimatexlocation.ma</p>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">ULTIMATE X</a>
+                <p>La référence de la location de luxe au Maroc, basée à Fès. Véhicules de prestige avec service premium.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Ultimate X Morocco. Tous droits réservés.</p>
+            <div class="footer-section">
+                <h4>Contact Fès</h4>
+                <p>📞 +212 (0) 5 24 33 44 56</p>
+                <p>✉️ contact@ultimatexlocation.ma</p>
+                <p>📍 Avenue des FAR, Fès, Maroc</p>
             </div>
-        </footer>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ultimate X Morocco. Tous droits réservés.</p>
+        </div>
+    </footer>
     </main>
 
     <script>
@@ -307,11 +308,30 @@
         // C. Envoi direct
         console.log("Envoi :", data);
 
+<<<<<<< HEAD
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                document.querySelector('nav ul').classList.toggle('mobile-open');
+                menuToggle.classList.toggle('active');
+=======
         try {
             const response = await fetch('http://localhost:5000/api/v1/users/devis', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
+>>>>>>> beb7e4f1890779b64b3be11e1b5614d942978b53
             });
 
             if (response.ok) {
@@ -324,7 +344,31 @@
             console.error(error);
             alert('❌ Serveur non connecté');
         }
+<<<<<<< HEAD
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        function revealOnScroll() {
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 150;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        if (reveals.length > 0) {
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Initial check
+        }
+=======
     });
+>>>>>>> beb7e4f1890779b64b3be11e1b5614d942978b53
     </script>
+    <script src="search.js"></script>
 </body>
 </html>
