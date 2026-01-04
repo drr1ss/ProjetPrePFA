@@ -1,44 +1,29 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  // --- Informations Personnelles ---
-  nomComplet: { type: String, required: true },
+  // On utilise exactement les 'name' de ton HTML
+  nom: { type: String, required: true },
   email: { type: String, required: true },
   telephone: { type: String, required: true },
+  
+  // name="vehicule"
+  vehicule: { type: String, required: true },
 
-  // --- Choix du Véhicule (Liste exacte de tes images) ---
-  typeVehicule: { 
-    type: String, 
-    enum: [
-      'Prestige', 'SUV & 4x4', 'Service', 'Tourisme', 
-      'Normal', 'Moto', 'Compact', 'Sport', 'Citadine'
-    ],
-    required: true 
-  },
+  // name="livraison_lieu", "livraison_date", etc.
+  livraison_lieu: { type: String, required: true },
+  livraison_date: { type: String, required: true },
+  livraison_heure: { type: String },
 
-  // --- Livraison ---
-  livraison: {
-    lieu: { type: String, required: true },
-    date: { type: String, required: true },
-    heure: { type: String, required: true }
-  },
+  restitution_lieu: { type: String, required: true },
+  restitution_date: { type: String, required: true },
+  restitution_heure: { type: String },
 
-  // --- Restitution ---
-  restitution: {
-    lieu: { type: String, required: true },
-    date: { type: String, required: true },
-    heure: { type: String, required: true }
-  },
+  // name="services" (C'est un tableau car plusieurs cases cochées)
+  services: [{ type: String }],
 
-  // --- Services Supplémentaires (Checkbox) ---
-  services: [{
-    type: String 
-    // Ex: "WiFi embarqué", "Siège enfant", "Assurance premium"
-  }],
+  // name="commentaires"
+  commentaires: { type: String }
 
-  // --- Commentaires ---
-  message: { type: String }
-
-}, { timestamps: true }); // Ajoute la date de création automatiquement
+}, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);
