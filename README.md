@@ -1,9 +1,5 @@
 # 🏎️ Ultimate X Location - Prestige & Performance
 
-![Statut du Projet](https://img.shields.io/badge/Statut-En%20D%C3%A9veloppement-orange)
-![Version](https://img.shields.io/badge/Version-1.0.0-blue)
-![Tech Stack](https://img.shields.io/badge/Stack-MERN%20(Fullstack)-green)
-
 **Ultimate X Location** est une plateforme de location de véhicules de luxe basée au Maroc, offrant un service premium de livraison nationale. Ce projet a été réalisé dans le cadre d'un **Pré-PFA** (Projet de Fin d'Année) pour démontrer nos compétences en développement web moderne.
 
 ---
