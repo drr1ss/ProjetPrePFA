@@ -28,3 +28,5 @@ app.use('/api/v1/users', UserRoutes);
 app.listen(port, () => {
     console.log(`✅ Serveur lancé sur le port ${port}`);
 });
+
+module.exports = app;
