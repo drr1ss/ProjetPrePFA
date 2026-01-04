@@ -1,0 +1,28 @@
+{
+  "name": "projetprepfa",
+  "version": "1.0.0",
+  "description": "![Statut du Projet](https://img.shields.io/badge/Statut-En%20D%C3%A9veloppement-orange)\r ![Version](https://img.shields.io/badge/Version-1.0.0-blue)\r ![Tech Stack](https://img.shields.io/badge/Stack-MERN%20(Fullstack)-green)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drr1ss/ProjetPrePFA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/drr1ss/ProjetPrePFA/issues"
+  },
+  "homepage": "https://github.com/drr1ss/ProjetPrePFA#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.1"
+  }
+}
