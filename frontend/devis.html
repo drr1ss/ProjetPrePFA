@@ -283,23 +283,32 @@
     </main>
 
     <script>
-        // Set minimum date to today
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('livraison-date').min = today;
-        document.getElementById('restitution-date').min = today;
+    // 1. Dates minimales (Aujourd'hui)
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('livraison-date').min = today;
+    document.getElementById('restitution-date').min = today;
 
-        // Update restitution min date based on livraison date
-        document.getElementById('livraison-date').addEventListener('change', function() {
-            document.getElementById('restitution-date').min = this.value;
+    // 2. Envoi du formulaire simplifié
+    document.getElementById('devisForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // A. On récupère toutes les données du formulaire automatiquement
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+
+        // B. Petite correction pour les Services (car c'est des cases à cocher multiples)
+        // On remplace les valeurs "on/off" par les vrais noms
+        const services = [];
+        document.querySelectorAll('input[name="services"]:checked').forEach(cb => {
+            // On prend le texte à côté de la case (ex: "Chauffeur privé")
+            services.push(cb.parentElement.querySelector('.service-text').innerText);
         });
+        data.services = services;
 
-        // Form submission
-        document.getElementById('devisForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Merci ! Votre demande de devis a été envoyée. Nous vous répondrons sous 24h.');
-            this.reset();
-        });
+        // C. Envoi direct
+        console.log("Envoi :", data);
 
+<<<<<<< HEAD
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -316,8 +325,26 @@
             menuToggle.addEventListener('click', () => {
                 document.querySelector('nav ul').classList.toggle('mobile-open');
                 menuToggle.classList.toggle('active');
+=======
+        try {
+            const response = await fetch('http://localhost:5000/api/v1/users/devis', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+>>>>>>> beb7e4f1890779b64b3be11e1b5614d942978b53
             });
+
+            if (response.ok) {
+                alert('✅ Devis envoyé !');
+                this.reset();
+            } else {
+                alert('❌ Erreur serveur');
+            }
+        } catch (error) {
+            console.error(error);
+            alert('❌ Serveur non connecté');
         }
+<<<<<<< HEAD
 
         // Scroll reveal animation
         const reveals = document.querySelectorAll('.reveal');
@@ -338,6 +365,9 @@
             window.addEventListener('scroll', revealOnScroll);
             revealOnScroll(); // Initial check
         }
+=======
+    });
+>>>>>>> beb7e4f1890779b64b3be11e1b5614d942978b53
     </script>
     <script src="search.js"></script>
 </body>
