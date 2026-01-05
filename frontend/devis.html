@@ -1,65 +1,380 @@
-<script>
-        // --- 1. CONFIGURATION DES DATES (Minimum aujourd'hui) ---
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('livraison-date').min = today;
-        document.getElementById('restitution-date').min = today;
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demander un Devis | Ultimate X Location</title>
+    <meta name="description" content="Obtenez un devis personnalisé pour la location de véhicules de luxe au Maroc. Devis gratuit et rapide.">
+    <link rel="stylesheet" href="devis.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glow"></div>
+    <div class="background-glow-2"></div>
+    
+    <nav id="navbar">
+        <a href="index.html" class="logo">ULTIMATE X</a>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="flotte.html">Flotte</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="devis.html" class="active">Devis</a></li>
+            <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 
-        // --- 2. GESTION DU FORMULAIRE (ENVOI) ---
-        document.getElementById('devisForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+    <main>
+        <section class="devis-hero">
+            <h1>Demande de Devis</h1>
+            <p>Remplissez le formulaire ci-dessous et recevez votre devis personnalisé sous 24h</p>
+        </section>
 
-            // A. Récupération des données
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
+        <section class="devis-form-section">
+            <form class="devis-form" id="devisForm">
+                <div class="form-section">
+                    <h2>Informations Personnelles</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nom">Nom complet *</label>
+                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone *</label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="+212 6XX XXX XXX" required>
+                        </div>
+                    </div>
+                </div>
 
-            // B. Correction des services (checkboxes)
-            const services = [];
-            document.querySelectorAll('input[name="services"]:checked').forEach(cb => {
-                services.push(cb.parentElement.querySelector('.service-text').innerText);
-            });
-            data.services = services;
+<div class="form-section">
+                    <h2>Type de Véhicule</h2>
+                    <div class="vehicle-options">
+                        <label class="vehicle-card">
+                            <input type="radio" name="vehicule" value="prestige" checked>
+                            <div class="vehicle-content">
+                                <span class="vehicle-icon">🚗</span>
+                                <span class="vehicle-name">Prestige</span>
+                                <span class="vehicle-desc">Mercedes, BMW, Audi</span>
+                            </div>
+                        </label>
+                        <label class="vehicle-card">
+                            <input type="radio" name="vehicule" value="suv">
+                            <div class="vehicle-content">
+                                <span class="vehicle-icon">🚙</span>
+                                <span class="vehicle-name">SUV & 4x4</span>
+                                <span class="vehicle-desc">Range Rover, BMW X, Porsche Cayenne</span>
+                            </div>
+                        </label>
+                        <label class="vehicle-card">
+                            <input type="radio" name="vehicule" value="service">
+                            <div class="vehicle-content">
+                                <span class="vehicle-icon">🚐</span>
+                                <span class="vehicle-name">Service</span>
+                                <span class="vehicle-desc">Van, Minibus, Transport pro</span>
+                            </div>
+                        </label>
+                        <label class="vehicle-card">
+                            <input type="radio" name="vehicule" value="tourisme">
+                            <div class="vehicle-content">
+                                <span class="vehicle-icon">🚌</span>
+                                <span class="vehicle-name">Tourisme</span>
+                                <span class="vehicle-desc">Bus, Cars, Groupes</span>
+                            </div>
+                        </label>
+                        <label class="vehicle-card">
+                            <input type="radio" name="vehicule" value="normal">
+                            <div class="vehicle-content">
+                                <span class="vehicle-icon">🚘</span>
+                                <span class="vehicle-name">Normal</span>
+                                <span class="vehicle-desc">Berline, Familiale, Économique</span>
+                            </div>
+                        </label>
+                        <label class="vehicle-card">
+                            <input type="radio" name="vehicule" value="moto">
+                            <div class="vehicle-content">
+                                <span class="vehicle-icon">🏍️</span>
+                                <span class="vehicle-name">Moto</span>
+                                <span class="vehicle-desc">Scooter, Moto, Quad</span>
+                            </div>
+                        </label>
+                        <label class="vehicle-card">
+                            <input type="radio" name="vehicule" value="compact">
+                            <div class="vehicle-content">
+                                <span class="vehicle-icon">🚗</span>
+                                <span class="vehicle-name">Compact</span>
+                                <span class="vehicle-desc">Petite citadine, Urbaine</span>
+                            </div>
+                        </label>
+                        <label class="vehicle-card">
+                            <input type="radio" name="vehicule" value="sport">
+                            <div class="vehicle-content">
+                                <span class="vehicle-icon">🏎️</span>
+                                <span class="vehicle-name">Sport</span>
+                                <span class="vehicle-desc">Porsche, Ferrari, Lamborghini</span>
+                            </div>
+                        </label>
+                        <label class="vehicle-card">
+                            <input type="radio" name="vehicule" value="citadine">
+                            <div class="vehicle-content">
+                                <span class="vehicle-icon">🚙</span>
+                                <span class="vehicle-name">Citadine</span>
+                                <span class="vehicle-desc">Agile, Maniable, Ville</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
 
-            console.log("Envoi des données :", data);
+                <div class="form-section">
+                    <h2>Livraison</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="livraison-lieu">Lieu de livraison *</label>
+                            <select id="livraison-lieu" name="livraison_lieu" required>
+                                <option value="">Sélectionnez une ville</option>
+                                <option value="fes">Fès</option>
+                                <option value="casablanca">Casablanca</option>
+                                <option value="marrakech">Marrakech</option>
+                                <option value="tanger">Tanger</option>
+                                <option value="agadir">Agadir</option>
+                                <option value="rabat">Rabat</option>
+                                <option value="autre">Autre ville</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="livraison-date">Date de livraison *</label>
+                            <input type="date" id="livraison-date" name="livraison_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="livraison-heure">Heure de livraison</label>
+                            <input type="time" id="livraison-heure" name="livraison_heure">
+                        </div>
+                    </div>
+                </div>
 
-            // C. Envoi au Backend
-            try {
-               const response = await fetch('/api/v1/users/devis', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
+                <div class="form-section">
+                    <h2>Restitution</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="restitution-lieu">Lieu de restitution *</label>
+                            <select id="restitution-lieu" name="restitution_lieu" required>
+                                <option value="">Sélectionnez une ville</option>
+                                <option value="fes">Fès</option>
+                                <option value="casablanca">Casablanca</option>
+                                <option value="marrakech">Marrakech</option>
+                                <option value="tanger">Tanger</option>
+                                <option value="agadir">Agadir</option>
+                                <option value="rabat">Rabat</option>
+                                <option value="autre">Autre ville</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="restitution-date">Date de restitution *</label>
+                            <input type="date" id="restitution-date" name="restitution_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="restitution-heure">Heure de restitution</label>
+                            <input type="time" id="restitution-heure" name="restitution_heure">
+                        </div>
+                    </div>
+                </div>
 
-                if (response.ok) {
-                    alert('✅ Devis envoyé avec succès !');
-                    this.reset();
-                } else {
-                    alert('❌ Erreur serveur lors de l\'envoi.');
-                }
-            } catch (error) {
-                console.error(error);
-                alert('❌ Impossible de contacter le serveur (Vérifie qu\'il est lancé sur le port 5000).');
-            }
+                <div class="form-section">
+                    <h2>Services Supplémentaires</h2>
+                    <div class="services-grid">
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="chauffeur">
+                            <span class="checkmark"></span>
+                            <span class="service-text">🚗 Chauffeur privé</span>
+                        </label>
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="assurance">
+                            <span class="checkmark"></span>
+                            <span class="service-text">🛡️ Assurance premium</span>
+                        </label>
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="siege">
+                            <span class="checkmark"></span>
+                            <span class="service-text">🍼 Siège enfant</span>
+                        </label>
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="gps">
+                            <span class="checkmark"></span>
+                            <span class="service-text">📍 GPS inclus</span>
+                        </label>
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="wifi">
+                            <span class="checkmark"></span>
+                            <span class="service-text">📶 WiFi embarqué</span>
+                        </label>
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="km illimite">
+                            <span class="checkmark"></span>
+                            <span class="service-text">♾️ Kilométrage illimité</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Commentaires Supplémentaires</h2>
+                    <div class="form-group full-width">
+                        <label for="commentaires">Remarques ou demandes spéciales</label>
+                        <textarea id="commentaires" name="commentaires" rows="4" placeholder="Décrivez vos besoins spécifiques..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn-submit">Envoyer la demande de devis</button>
+                    <p class="form-notice">Devis gratuit et sans engagement. Réponse sous 24h.</p>
+                </div>
+            </form>
+        </section>
+
+        <section class="advantages">
+            <h2 class="section-title">L'ENGAGEMENT ULTIMATE X</h2>
+            <div class="advantages-grid">
+                <div class="advantage">
+                    <div class="icon">🇲🇦</div>
+                    <h3>Livraison Nationale</h3>
+                    <p>Votre véhicule livré à domicile, à l'aéroport ou à votre hôtel dans tout le Maroc.</p>
+                </div>
+                <div class="advantage">
+                    <div class="icon">📜</div>
+                    <h3>Facturation Transparente</h3>
+                    <p>Consultez votre facture et votre devis complet avant de valider votre réservation.</p>
+                </div>
+                <div class="advantage">
+                    <div class="icon">📍</div>
+                    <h3>Dépôt Partout</h3>
+                    <p>Restituez votre véhicule dans la ville de votre choix, nous nous occupons du reste.</p>
+                </div>
+                <div class="advantage">
+                    <div class="icon">🛡️</div>
+                    <h3>Zéro Risque</h3>
+                    <p>Assurance premium incluse pour une sérénité totale sur les routes marocaines.</p>
+                </div>
+            </div>
+        </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">ULTIMATE X</a>
+                <p>La référence de la location de luxe au Maroc, basée à Fès. Véhicules de prestige avec service premium.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Fès</h4>
+                <p>📞 +212 (0) 5 24 33 44 56</p>
+                <p>✉️ contact@ultimatexlocation.ma</p>
+                <p>📍 Avenue des FAR, Fès, Maroc</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ultimate X Morocco. Tous droits réservés.</p>
+        </div>
+    </footer>
+    </main>
+
+   <script>
+    // --- 1. CONFIGURATION DES DATES (Minimum aujourd'hui) ---
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('livraison-date').min = today;
+    document.getElementById('restitution-date').min = today;
+
+    // --- 2. GESTION DU FORMULAIRE (ENVOI) ---
+    document.getElementById('devisForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // A. Récupération des données
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+
+        // B. Correction des services (checkboxes multiples)
+        const services = [];
+        document.querySelectorAll('input[name="services"]:checked').forEach(cb => {
+            services.push(cb.parentElement.querySelector('.service-text').innerText);
         });
+        data.services = services;
 
-        // --- 3. EFFETS VISUELS (Menu & Scroll) ---
-        // (Ce code est maintenant correctement placé EN DEHORS du formulaire)
-        
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+        console.log("Envoi des données :", data);
+
+        // C. Envoi au Backend (Chemin relatif pour Vercel)
+    try {
+            // 1. Détection : Suis-je sur mon PC ou sur Vercel ?
+            const isLocal = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
+            
+            // 2. Choix de l'adresse
+            // Si local => on vise le port 5000
+            // Si Vercel => on utilise le chemin relatif
+            const apiUrl = isLocal 
+                ? 'http://localhost:5000/api/v1/users/devis' 
+                : '/api/v1/users/devis';
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert('✅ Devis envoyé avec succès !');
+                this.reset();
             } else {
-                navbar.classList.remove('scrolled');
+                alert('❌ Erreur serveur lors de l\'envoi.');
+            }
+        } catch (error) {
+            console.error(error);
+            alert('❌ Impossible de contacter le serveur.');
+        }
+    });
+
+    // --- 3. EFFETS VISUELS (Doit être EN DEHORS du formulaire) ---
+    
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            document.querySelector('nav ul').classList.toggle('mobile-open');
+            menuToggle.classList.toggle('active');
+        });
+    }
+
+    // Scroll Reveal Animation
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+        reveals.forEach(element => {
+            const windowHeight = window.innerHeight;
+            const elementTop = element.getBoundingClientRect().top;
+            const revealPoint = 150;
+            
+            if (elementTop < windowHeight - revealPoint) {
+                element.classList.add('active');
             }
         });
-
-        // Mobile Menu Toggle
-        const menuToggle = document.querySelector('.mobile-menu-toggle');
-        if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                document.querySelector('nav ul').classList.toggle('mobile-open');
-                menuToggle.classList.toggle('active');
-            });
-        }
+    }
+    
+    if (reveals.length > 0) {
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+    }
     </script>
+    <script src="search.js"></script>
+</body>
+</html>
