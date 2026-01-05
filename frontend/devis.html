@@ -4,33 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demander un Devis | Ultimate X Location</title>
+    
     <meta name="description" content="Obtenez un devis personnalisé pour la location de véhicules de luxe au Maroc. Devis gratuit et rapide.">
+    <meta name="keywords" content="devis location voiture maroc, reservation luxe, ultimate x, location prestige">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="devis.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background-glow"></div>
     <div class="background-glow-2"></div>
     
-    <nav id="navbar">
-        <a href="index.html" class="logo">ULTIMATE X</a>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="flotte.html">Flotte</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="devis.html" class="active">Devis</a></li>
-            <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
-        </ul>
-        <div class="mobile-menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <header>
+        <nav id="navbar">
+            <a href="index.html" class="logo">ULTIMATE X</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="flotte.html">Flotte</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
 
     <main>
         <section class="devis-hero">
-            <h1>Demande de Devis</h1>
+            <span class="badge">Devis Gratuit — Réponse sous 24h</span>
+            <h1 class="title-impact">DEMANDEZ VOTRE<br>DEVIS PERSONNALISÉ.</h1>
             <p>Remplissez le formulaire ci-dessous et recevez votre devis personnalisé sous 24h</p>
         </section>
 
@@ -54,7 +63,7 @@
                     </div>
                 </div>
 
-<div class="form-section">
+                <div class="form-section">
                     <h2>Type de Véhicule</h2>
                     <div class="vehicle-options">
                         <label class="vehicle-card">
@@ -238,77 +247,103 @@
         </section>
 
         <section class="advantages">
-            <h2 class="section-title">L'ENGAGEMENT ULTIMATE X</h2>
+            <div class="section-header">
+                <h2 class="section-title">L'Engagement Ultimate X</h2>
+            </div>
             <div class="advantages-grid">
-                <div class="advantage">
-                    <div class="icon">🇲🇦</div>
-                    <h3>Livraison Nationale</h3>
+                <div class="advantage reveal">
+                    <i class="fas fa-truck-fast advantage-icon"></i>
+                    <h3>Livraison Partout</h3>
                     <p>Votre véhicule livré à domicile, à l'aéroport ou à votre hôtel dans tout le Maroc.</p>
                 </div>
-                <div class="advantage">
-                    <div class="icon">📜</div>
-                    <h3>Facturation Transparente</h3>
-                    <p>Consultez votre facture et votre devis complet avant de valider votre réservation.</p>
+                <div class="advantage reveal">
+                    <i class="fas fa-file-invoice-dollar advantage-icon"></i>
+                    <h3>Transparence Totale</h3>
+                    <p>Tarifs nets sans frais cachés. Facture proforma émise avant validation.</p>
                 </div>
-                <div class="advantage">
-                    <div class="icon">📍</div>
+                <div class="advantage reveal">
+                    <i class="fas fa-shield-halved advantage-icon"></i>
+                    <h3>Assurance Premium</h3>
+                    <p>Une couverture complète pour rouler en toute sérénité sur les routes du Royaume.</p>
+                </div>
+                <div class="advantage reveal">
+                    <i class="fas fa-map-location-dot advantage-icon"></i>
                     <h3>Dépôt Partout</h3>
-                    <p>Restituez votre véhicule dans la ville de votre choix, nous nous occupons du reste.</p>
-                </div>
-                <div class="advantage">
-                    <div class="icon">🛡️</div>
-                    <h3>Zéro Risque</h3>
-                    <p>Assurance premium incluse pour une sérénité totale sur les routes marocaines.</p>
+                    <p>Restituez votre véhicule dans la ville de votre choix. Service flexible.</p>
                 </div>
             </div>
         </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">ULTIMATE X</a>
-                <p>La référence de la location de luxe au Maroc, basée à Fès. Véhicules de prestige avec service premium.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Fès</h4>
-                <p>📞 +212 (0) 5 24 33 44 56</p>
-                <p>✉️ contact@ultimatexlocation.ma</p>
-                <p>📍 Avenue des FAR, Fès, Maroc</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Ultimate X Morocco. Tous droits réservés.</p>
-        </div>
-    </footer>
     </main>
 
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column brand-info">
+            <a href="index.html" class="footer-logo">ULTIMATE X</a>
+            <p class="footer-description">
+                Leader de la location de véhicules de prestige au Maroc. Excellence, discrétion et service sur-mesure pour une clientèle exigeante.
+            </p>
+            <div class="social-wrapper">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Navigation</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="flotte.html">Notre Flotte Luxe</a></li>
+                <li><a href="services.html">Services Chauffeur</a></li>
+                <li><a href="devis.html">Réservation</a></li>
+                <li><a href="#">Conditions Générales</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Nos Véhicules</h4>
+            <ul class="footer-links">
+                <li><a href="flotte.html?cat=suv">SUV de Prestige</a></li>
+                <li><a href="flotte.html?cat=berline">Berlines Affaires</a></li>
+                <li><a href="flotte.html?cat=sport">Sportives & GT</a></li>
+                <li><a href="flotte.html?cat=4x4">4x4 & Tout-Terrain</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Contact</h4>
+            <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <p>Avenue des FAR, Ville Nouvelle, Fès, Maroc</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p>+212 (0) 5 24 33 44 56</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p>contact@ultimatex.ma</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <p>Assistance 24h/7j - 7j/7</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p>&copy; 2026 ULTIMATE X Morocco. Tous droits réservés.</p>
+            <div class="footer-legal-links">
+                <a href="#">Mentions Légales</a>
+                <a href="#">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
     <script>
-    // 1. Dates minimales (Aujourd'hui)
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('livraison-date').min = today;
-    document.getElementById('restitution-date').min = today;
-
-    // 2. Envoi du formulaire simplifié
-    document.getElementById('devisForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        // A. On récupère toutes les données du formulaire automatiquement
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
-
-        // B. Petite correction pour les Services (car c'est des cases à cocher multiples)
-        // On remplace les valeurs "on/off" par les vrais noms
-        const services = [];
-        document.querySelectorAll('input[name="services"]:checked').forEach(cb => {
-            // On prend le texte à côté de la case (ex: "Chauffeur privé")
-            services.push(cb.parentElement.querySelector('.service-text').innerText);
-        });
-        data.services = services;
-
-        // C. Envoi direct
-        console.log("Envoi :", data);
-
-<<<<<<< HEAD
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -321,54 +356,50 @@
 
         // Mobile menu toggle
         const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
         if (menuToggle) {
             menuToggle.addEventListener('click', () => {
-                document.querySelector('nav ul').classList.toggle('mobile-open');
+                navLinks.classList.toggle('mobile-open');
                 menuToggle.classList.toggle('active');
-=======
-        try {
-            const response = await fetch('http://localhost:5000/api/v1/users/devis', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
->>>>>>> beb7e4f1890779b64b3be11e1b5614d942978b53
+                document.body.style.overflow = navLinks.classList.contains('mobile-open') ? 'hidden' : 'initial';
             });
-
-            if (response.ok) {
-                alert('✅ Devis envoyé !');
-                this.reset();
-            } else {
-                alert('❌ Erreur serveur');
-            }
-        } catch (error) {
-            console.error(error);
-            alert('❌ Serveur non connecté');
         }
-<<<<<<< HEAD
+
+        // Dates minimales (Aujourd'hui)
+        const today = new Date().toISOString().split('T')[0];
+        const livraisonDate = document.getElementById('livraison-date');
+        const restitutionDate = document.getElementById('restitution-date');
+        
+        if (livraisonDate) livraisonDate.min = today;
+        if (restitutionDate) restitutionDate.min = today;
+
+        // Form submission
+        const devisForm = document.getElementById('devisForm');
+        if (devisForm) {
+            devisForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                
+                // Collect checked services
+                const services = [];
+                document.querySelectorAll('input[name="services"]:checked').forEach(cb => {
+                    services.push(cb.parentElement.querySelector('.service-text').innerText);
+                });
+                data.services = services;
+
+                console.log("Envoi du devis:", data);
+                alert('✅ Devis envoyé avec succès !');
+                this.reset();
+            });
+        }
 
         // Scroll reveal animation
         const reveals = document.querySelectorAll('.reveal');
-        
-        function revealOnScroll() {
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const revealPoint = 150;
-                
-                if (elementTop < windowHeight - revealPoint) {
-                    element.classList.add('active');
-                }
-            });
-        }
-        
-        if (reveals.length > 0) {
-            window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll(); // Initial check
-        }
-=======
-    });
->>>>>>> beb7e4f1890779b64b3be11e1b5614d942978b53
-    </script>
-    <script src="search.js"></script>
-</body>
-</html>
+        const observerOptions = { threshold: 0.15 };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {

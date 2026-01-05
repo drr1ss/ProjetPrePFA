@@ -3,148 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate X | Location de Prestige Fès & Maroc</title>
-    <meta name="description" content="Location de véhicules de luxe au Maroc. Mercedes, BMW, Porsche, Range Rover. Livraison everywhere au Maroc. Service premium basé à Fès.">
+    <title>ULTIMATE X | Location de Prestige & Luxe au Maroc</title>
+    
+    <meta name="description" content="Location de véhicules de luxe à Fès et partout au Maroc. Flotte exclusive : Mercedes, Range Rover, Porsche. Service premium 24/7.">
+    <meta name="keywords" content="location voiture luxe maroc, prestige car rental fes, louer range rover maroc, ultimate x">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background-glow"></div>
     <div class="background-glow-2"></div>
     
-    <nav id="navbar">
-        <a href="index.html" class="logo">ULTIMATE X</a>
-        <ul>
-            <li><a href="index.html" class="active">Accueil</a></li>
-            <li><a href="flotte.html">Flotte</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="devis.html">Devis</a></li>
-            <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
-        </ul>
-        <div class="mobile-menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <header>
+        <nav id="navbar">
+            <a href="index.html" class="logo">ULTIMATE X</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="flotte.html">Flotte</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <section class="hero">
             <div class="hero-badge">
-                <span>📍</span>
-                <span>Siège à Fès — Service National</span>
+                <i class="fas fa-location-dot"></i>
+                <span>Siège à Fès — Service National Premium</span>
             </div>
             <h1 class="hero-title">
                 <span class="gradient-text">L'EXCELLENCE</span><br>
                 AUTOMOBILE AU MAROC.
             </h1>
             <p class="hero-subtitle">
-                Basés à Fès, nous assurons la livraison et le dépôt de nos véhicules d'exception 
-                partout au Maroc : Casablanca, Marrakech, Tanger, Agadir.
+                Vivez une expérience de conduite inégalée. Nous livrons nos véhicules d'exception 
+                partout dans le Royaume : Casablanca, Marrakech, Tanger et Agadir.
             </p>
             
             <div class="search-container">
                 <form class="search-bar" action="devis.html" method="get">
                     <div class="search-input-group">
+                        <label for="lieu">Lieu de livraison</label>
                         <div class="input-wrapper">
-                            <span class="input-icon">📍</span>
-                            <input type="text" id="lieu" name="lieu" placeholder="Ville de livraison" required autocomplete="off">
-                            <label for="lieu">Lieu</label>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="lieu" name="lieu" placeholder="Ex: Aéroport Fès-Saïss" required>
                         </div>
                     </div>
                     <div class="search-input-group">
+                        <label for="date-debut">Départ</label>
                         <div class="input-wrapper">
-                            <span class="input-icon">📅</span>
+                            <i class="fas fa-calendar-plus"></i>
                             <input type="date" id="date-debut" name="date-debut" required>
-                            <label for="date-debut">Départ</label>
                         </div>
                     </div>
                     <div class="search-input-group">
+                        <label for="date-fin">Retour</label>
                         <div class="input-wrapper">
-                            <span class="input-icon">🔚</span>
+                            <i class="fas fa-calendar-check"></i>
                             <input type="date" id="date-fin" name="date-fin" required>
-                            <label for="date-fin">Retour</label>
                         </div>
                     </div>
                     <button type="submit" class="search-btn">
-                        <span>Générer Devis</span>
-                        <span class="btn-arrow">→</span>
+                        Générer Devis <i class="fas fa-arrow-right"></i>
                     </button>
                 </form>
-                <p class="pre-notice">
-                    <span class="check-icon">✓</span>
-                    Devis et facture proforma gratuits avant tout paiement
-                </p>
             </div>
+            <p class="pre-notice">
+                <i class="fas fa-shield-check"></i> Devis et facture proforma gratuits en 2 minutes
+            </p>
         </section>
 
-        <section class="section-header">
-            <h2 class="section-title">Notre Flotte</h2>
-            <p class="section-subtitle">Découvrez notre collection exclusive de véhicules de prestige</p>
-        </section>
+        <section class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Collection</h2>
+                <p class="section-subtitle">Sélectionnez la catégorie qui correspond à votre standing</p>
+            </div>
 
-        <section class="bento-grid">
-            <div class="card tall card-bg-prestige" onclick="window.location.href='flotte.html?category=prestige'">
-                <div class="card-overlay">
-                    <span class="card-title">Prestige</span>
-                    <span class="card-subtitle">Mercedes, BMW, Porsche</span>
+            <div class="bento-grid">
+                <div class="card tall" onclick="location.href='flotte.html?category=prestige'">
+                    <div class="card-image-overlay" style="background-image: url('https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="card-content">
+                        <h3 class="card-name">Prestige</h3>
+                        <p class="card-subtitle">Mercedes, BMW, Porsche</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card wide card-bg-suv" onclick="window.location.href='flotte.html?category=suv'">
-                <div class="card-overlay">
-                    <span class="card-title">SUV & 4x4 Luxe</span>
-                    <span class="card-subtitle">Range Rover, Mercedes G-Class, BMW X7</span>
+
+                <div class="card wide" onclick="location.href='flotte.html?category=suv'">
+                    <div class="card-image-overlay" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=800&auto=format&fit=crop');"></div>
+                    <div class="card-content">
+                        <h3 class="card-name">SUV & 4x4 Luxe</h3>
+                        <p class="card-subtitle">Range Rover, G-Class</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card" onclick="window.location.href='services.html'">
-                <div class="card-content">
-                    <span class="card-icon">🚐</span>
-                    <span class="card-name">Service</span>
+
+                <div class="card small-icon" onclick="location.href='services.html'">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-handshake-angle"></i>
+                        <span class="card-name">Chauffeur</span>
+                    </div>
                 </div>
-            </div>
-            <div class="card" onclick="window.location.href='services.html'">
-                <div class="card-content">
-                    <span class="card-icon">🚌</span>
-                    <span class="card-name">Tourisme</span>
+
+                <div class="card small-icon" onclick="location.href='services.html'">
+                    <div class="card-icon-wrapper">
+                        <i class="fas fa-van-shuttle"></i>
+                        <span class="card-name">Transport</span>
+                    </div>
                 </div>
-            </div>
-            <div class="card" onclick="window.location.href='flotte.html'">
-                <div class="card-content">
-                    <span class="card-icon">🚘</span>
-                    <span class="card-name">Normal</span>
+
+                <div class="card stats">
+                    <div class="card-content-center">
+                        <span class="stat-number">24/7</span>
+                        <p class="stat-label">Assistance VIP</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card" onclick="window.location.href='flotte.html'">
-                <div class="card-content">
-                    <span class="card-icon">🏍️</span>
-                    <span class="card-name">Moto</span>
+
+                <div class="card stats" style="background: var(--glass-hover);">
+                    <div class="card-content-center">
+                        <span class="stat-number">FÈS</span>
+                        <p class="stat-label">Siège Principal</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card" onclick="window.location.href='flotte.html'">
-                <div class="card-content">
-                    <span class="card-icon">🚗</span>
-                    <span class="card-name">Compact</span>
+
+                <div class="card" onclick="location.href='flotte.html?category=sport'">
+                    <div class="card-image-overlay" style="background: linear-gradient(135deg, #ec4899, #8b5cf6); opacity: 0.2;"></div>
+                    <div class="card-content-center">
+                        <i class="fas fa-gauge-high card-big-icon"></i>
+                        <span class="card-name">Sportives</span>
+                    </div>
                 </div>
-            </div>
-            <div class="card" onclick="window.location.href='flotte.html?category=sport'">
-                <div class="card-content">
-                    <span class="card-icon">🏎️</span>
-                    <span class="card-name">Sport</span>
-                </div>
-            </div>
-            <div class="card" onclick="window.location.href='flotte.html'">
-                <div class="card-content">
-                    <span class="card-icon">🚙</span>
-                    <span class="card-name">Citadine</span>
-                </div>
-            </div>
-            <div class="card small">
-                <h3>FÈS</h3>
-                <p>Siège Social</p>
-            </div>
-            <div class="card small">
-                <h3>24/7</h3>
-                <p>Assistance</p>
             </div>
         </section>
 
@@ -154,46 +146,91 @@
             </div>
             <div class="advantages-grid">
                 <div class="advantage reveal">
-                    <span class="advantage-icon">🇲🇦</span>
-                    <h3>Livraison Nationale</h3>
+                    <i class="fas fa-truck-fast advantage-icon"></i>
+                    <h3>Livraison Partout</h3>
                     <p>Votre véhicule livré à domicile, à l'aéroport ou à votre hôtel dans tout le Maroc.</p>
                 </div>
                 <div class="advantage reveal">
-                    <span class="advantage-icon">📜</span>
-                    <h3>Facturation Transparente</h3>
-                    <p>Consultez votre facture et votre devis complet avant de valider votre réservation.</p>
+                    <i class="fas fa-file-invoice-dollar advantage-icon"></i>
+                    <h3>Transparence Totale</h3>
+                    <p>Tarifs nets sans frais cachés. Facture proforma émise avant validation.</p>
                 </div>
                 <div class="advantage reveal">
-                    <span class="advantage-icon">📍</span>
-                    <h3>Dépôt Partout</h3>
-                    <p>Restituez votre véhicule dans la ville de votre choix, nous nous occupons du reste.</p>
-                </div>
-                <div class="advantage reveal">
-                    <span class="advantage-icon">🛡️</span>
-                    <h3>Zéro Risque</h3>
-                    <p>Assurance premium incluse pour une sérénité totale sur les routes marocaines.</p>
+                    <i class="fas fa-shield-halved advantage-icon"></i>
+                    <h3>Assurance Premium</h3>
+                    <p>Une couverture complète pour rouler en toute sérénité sur les routes du Royaume.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">ULTIMATE X</a>
-                <p>La référence de la location de luxe au Maroc, basée à Fès. Vehicles de prestige avec service premium.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Fès</h4>
-                <p>📞 +212 (0) 5 24 33 44 56</p>
-                <p>✉️ contact@ultimatexlocation.ma</p>
-                <p>📍 Avenue des FAR, Fès, Maroc</p>
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column brand-info">
+            <a href="index.html" class="footer-logo">ULTIMATE X</a>
+            <p class="footer-description">
+                Leader de la location de véhicules de prestige au Maroc. Excellence, discrétion et service sur-mesure pour une clientèle exigeante.
+            </p>
+            <div class="social-wrapper">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Ultimate X Morocco. Tous droits réservés.</p>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Navigation</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="flotte.html">Notre Flotte Luxe</a></li>
+                <li><a href="services.html">Services Chauffeur</a></li>
+                <li><a href="devis.html">Réservation</a></li>
+                <li><a href="#">Conditions Générales</a></li>
+            </ul>
         </div>
-    </footer>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Nos Véhicules</h4>
+            <ul class="footer-links">
+                <li><a href="flotte.html?cat=suv">SUV de Prestige</a></li>
+                <li><a href="flotte.html?cat=berline">Berlines Affaires</a></li>
+                <li><a href="flotte.html?cat=sport">Sportives & GT</a></li>
+                <li><a href="flotte.html?cat=4x4">4x4 & Tout-Terrain</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Contact</h4>
+            <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <p>Avenue des FAR, Ville Nouvelle, Fès, Maroc</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p>+212 (0) 5 24 33 44 56</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p>contact@ultimatex.ma</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <p>Assistance 24h/7j - 7j/7</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p>&copy; 2026 ULTIMATE X Morocco. Tous droits réservés.</p>
+            <div class="footer-legal-links">
+                <a href="#">Mentions Légales</a>
+                <a href="#">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script>
         // Navbar scroll effect
@@ -206,34 +243,29 @@
             }
         });
 
-        // Scroll reveal animation
-        const reveals = document.querySelectorAll('.reveal');
-        
-        function revealOnScroll() {
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const revealPoint = 150;
-                
-                if (elementTop < windowHeight - revealPoint) {
-                    element.classList.add('active');
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Initial check
-
         // Mobile menu toggle
         const menuToggle = document.querySelector('.mobile-menu-toggle');
-        if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                document.querySelector('nav ul').classList.toggle('mobile-open');
-                menuToggle.classList.toggle('active');
-            });
-        }
-    </script>
-    <script src="search.js"></script>
-</body>
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-open');
+            menuToggle.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('mobile-open') ? 'hidden' : 'initial';
+        });
 
+        // Scroll reveal simple implementation
+        const reveals = document.querySelectorAll('.reveal');
+        const observerOptions = { threshold: 0.15 };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        reveals.forEach(reveal => observer.observe(reveal));
+    </script>
+</body>
 </html>
