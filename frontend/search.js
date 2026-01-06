@@ -1,6 +1,6 @@
 /**
  * Search Container Module
- * Gère le formulaire de recherche de devis sur la page d'accueil
+ * Gère le formulaire de recherche de reservation sur la page d'accueil
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -41,7 +41,7 @@ function initSearchForm() {
             
             if (!lieu || !dateDebut || !dateFin) {
                 e.preventDefault();
-                showNotification('Veuillez remplir tous les champs pour générer votre devis.', 'error');
+                showNotification('Veuillez remplir tous les champs pour générer votre reservation.', 'error');
                 
                 // Focus sur le premier champ vide
                 if (!lieu && lieuInput) {
@@ -139,7 +139,7 @@ function initURLParams() {
         }
     }
 
-    // Pré-remplir le formulaire devis.html si on vient de index.html
+    // Pré-remplir le formulaire reservation.html si on vient de index.html
     const livraisonLieu = document.getElementById('livraison-lieu');
     const livraisonDate = document.getElementById('livraison-date');
     const restitutionDate = document.getElementById('restitution-date');

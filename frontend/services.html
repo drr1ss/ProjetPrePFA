@@ -4,28 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Ultimate X Prestige Location</title>
+    
+    <meta name="description" content="Découvrez nos services premium de location de véhicules de luxe au Maroc. Chauffeur, livraison nationale, assurance incluse.">
+    <meta name="keywords" content="location voiture luxe maroc, services chauffeur, ultimate x, location prestige">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="services.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background-glow"></div>
     <div class="background-glow-2"></div>
     
-    <nav id="navbar">
-        <a href="index.html" class="logo">ULTIMATE X</a>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="flotte.html">Flotte</a></li>
-            <li><a href="services.html" class="active">Services</a></li>
-            <li><a href="devis.html">Devis</a></li>
-            <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
-        </ul>
-        <div class="mobile-menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <header>
+        <nav id="navbar">
+            <a href="index.html" class="logo">ULTIMATE X</a>
+            <button class="mobile-menu-toggle" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="flotte.html">Flotte</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li class="btn-contact"><a href="reservation.html">Réserver une Voiture</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <header class="services-header">
@@ -160,9 +169,9 @@
                         <li>Kilométrage illimité</li>
                         <li>Assurance incluse</li>
                         <li>Assistance 24/7</li>
-                        <li>Livraison机场/火车站</li>
+                        <li>Livraison aéroport/火车站</li>
                     </ul>
-                    <a href="devis.html?service=day" class="btn-pricing">Demander un devis</a>
+                    <a href="reservation.html?service=day" class="btn-pricing">Faire une reservation</a>
                 </div>
 
                 <div class="pricing-card featured">
@@ -176,7 +185,7 @@
                         <li>Entretien inclus</li>
                         <li>Reprise flexible</li>
                     </ul>
-                    <a href="devis.html?service=long" class="btn-pricing featured-btn">Nous contacter</a>
+                    <a href="reservation.html?service=long" class="btn-pricing featured-btn">Nous contacter</a>
                 </div>
 
                 <div class="pricing-card">
@@ -189,7 +198,7 @@
                         <li>Suivi du vol</li>
                         <li>Eau & snacks</li>
                     </ul>
-                    <a href="devis.html?service=transfer" class="btn-pricing">Réserver</a>
+                    <a href="reservation.html?service=transfer" class="btn-pricing">Réserver</a>
                 </div>
             </div>
         </section>
@@ -232,28 +241,79 @@
             <p>Choisissez votre véhicule et réservez en quelques clics.</p>
             <div class="cta-buttons">
                 <a href="flotte.html" class="btn-cta primary">Voir la Flotte</a>
-                <a href="devis.html" class="btn-cta secondary">Demander un Devis</a>
+                <a href="reservation.html" class="btn-cta secondary">Faire une reservation</a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">ULTIMATE X</a>
-                <p>La référence de la location de luxe au Maroc, basée à Fès. Véhicules de prestige avec service premium.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Contact Fès</h4>
-                <p>📞 +212 (0) 5 24 33 44 56</p>
-                <p>✉️ contact@ultimatexlocation.ma</p>
-                <p>📍 Avenue des FAR, Fès, Maroc</p>
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column brand-info">
+            <a href="index.html" class="footer-logo">ULTIMATE X</a>
+            <p class="footer-description">
+                Leader de la location de véhicules de prestige au Maroc. Excellence, discrétion et service sur-mesure pour une clientèle exigeante.
+            </p>
+            <div class="social-wrapper">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Ultimate X Morocco. Tous droits réservés.</p>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Navigation</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="flotte.html">Notre Flotte Luxe</a></li>
+                <li><a href="services.html">Services Chauffeur</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
+                <li><a href="#">Conditions Générales</a></li>
+            </ul>
         </div>
-    </footer>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Nos Véhicules</h4>
+            <ul class="footer-links">
+                <li><a href="flotte.html?cat=suv">SUV de Prestige</a></li>
+                <li><a href="flotte.html?cat=berline">Berlines Affaires</a></li>
+                <li><a href="flotte.html?cat=sport">Sportives & GT</a></li>
+                <li><a href="flotte.html?cat=4x4">4x4 & Tout-Terrain</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Contact</h4>
+            <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <p>Avenue des FAR, Ville Nouvelle, Fès, Maroc</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p>+212 (0) 5 24 33 44 56</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p>contact@ultimatex.ma</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <p>Assistance 24h/7j - 7j/7</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p>&copy; 2026 ULTIMATE X Morocco. Tous droits réservés.</p>
+            <div class="footer-legal-links">
+                <a href="#">Mentions Légales</a>
+                <a href="#">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
     <script>
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
@@ -267,32 +327,33 @@
 
         // Mobile menu toggle
         const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
         if (menuToggle) {
             menuToggle.addEventListener('click', () => {
-                document.querySelector('nav ul').classList.toggle('mobile-open');
+                navLinks.classList.toggle('mobile-open');
                 menuToggle.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('mobile-open') ? 'hidden' : 'initial';
+            });
+
+            // Fermer le menu quand on clique sur un lien
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('mobile-open');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = 'initial';
+                });
             });
         }
 
         // Scroll reveal animation
         const reveals = document.querySelectorAll('.reveal');
-        
-        function revealOnScroll() {
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const revealPoint = 150;
-                
-                if (elementTop < windowHeight - revealPoint) {
-                    element.classList.add('active');
+        const observerOptions = { threshold: 0.15 };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
                 }
             });
-        }
-        
-        if (reveals.length > 0) {
-            window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll(); // Initial check
-        }
-    </script>
-</body>
-</html>
+        }, observerOptions);
