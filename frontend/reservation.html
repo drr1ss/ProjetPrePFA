@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation de Voiture | Ultimate X Location</title>
+    
+    <meta name="description" content="Réservez votre véhicule de luxe en ligne. Réservation rapide et simple pour la location de voitures de prestige au Maroc.">
+    <meta name="keywords" content="réservation location voiture maroc, reservation luxe, ultimate x, location prestige">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+    <div class="background-glow-2"></div>
+    
+    <header>
+        <nav id="navbar">
+            <a href="index.html" class="logo">ULTIMATE X</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="flotte.html">Flotte</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li class="btn-contact"><a href="reservation.html">Réserver une Voiture</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reservation-hero">
+            <span class="badge">Réservation Simple — Confirmation sous 24h</span>
+            <h1 class="title-impact">RÉSERVEZ VOTRE<br>VOITURE PERSONNALISÉE.</h1>
+            <p>Remplissez le formulaire ci-dessous et recevez votre confirmation sous 24h</p>
+        </section>
+
+        <section class="reservation-form-section">
+            <form class="reservation-form" id="reservationForm">
+                <div class="form-section">
+                    <h2>Informations Personnelles</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nom">Nom complet *</label>
+                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone *</label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="+212 6XX XXX XXX" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Sélection du Véhicule</h2>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="categorie-vehicule">Catégorie de véhicule *</label>
+                            <select id="categorie-vehicule" name="categorie" required>
+                                <option value="">Choisissez une catégorie</option>
+                                <option value="prestige">Prestige (Mercedes, BMW, Audi)</option>
+                                <option value="suv">SUV & 4x4 Luxe</option>
+                                <option value="sport">Sportives & GT</option>
+                                <option value="berline">Berlines Affaires</option>
+                                <option value="economique">Économique</option>
+                                <option value="van">Van & Utilitaire</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="vehicule-specifique">Véhicule souhaité *</label>
+                            <select id="vehicule-specifique" name="vehicule" required>
+                                <option value="">Sélectionnez d'abord une catégorie</option>
+                            </select>
+                            <span class="form-hint">Le prix est indicatif et peut varier selon la période</span>
+                        </div>
+                    </div>
+                    <div id="vehicle-preview" class="vehicle-preview" style="display: none;">
+                        <div class="preview-image">
+                            <img id="preview-img" src="" alt="Véhicule sélectionné">
+                        </div>
+                        <div class="preview-details">
+                            <h3 id="preview-name"></h3>
+                            <div class="preview-specs">
+                                <span id="preview-category"></span>
+                                <span id="preview-transmission"></span>
+                                <span id="preview-passengers"></span>
+                            </div>
+                            <div class="preview-price">
+                                <span class="price-label">À partir de</span>
+                                <span class="price-amount" id="preview-price">0 DH</span>
+                                <span class="price-period">/ jour</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Livraison</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="livraison-lieu">Lieu de livraison *</label>
+                            <select id="livraison-lieu" name="livraison_lieu" required>
+                                <option value="">Sélectionnez une ville</option>
+                                <option value="fes">Fès</option>
+                                <option value="casablanca">Casablanca</option>
+                                <option value="marrakech">Marrakech</option>
+                                <option value="tanger">Tanger</option>
+                                <option value="agadir">Agadir</option>
+                                <option value="rabat">Rabat</option>
+                                <option value="autre">Autre ville</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="livraison-date">Date de livraison *</label>
+                            <input type="date" id="livraison-date" name="livraison_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="livraison-heure">Heure de livraison</label>
+                            <input type="time" id="livraison-heure" name="livraison_heure">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Restitution</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="restitution-lieu">Lieu de restitution *</label>
+                            <select id="restitution-lieu" name="restitution_lieu" required>
+                                <option value="">Sélectionnez une ville</option>
+                                <option value="fes">Fès</option>
+                                <option value="casablanca">Casablanca</option>
+                                <option value="marrakech">Marrakech</option>
+                                <option value="tanger">Tanger</option>
+                                <option value="agadir">Agadir</option>
+                                <option value="rabat">Rabat</option>
+                                <option value="autre">Autre ville</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="restitution-date">Date de restitution *</label>
+                            <input type="date" id="restitution-date" name="restitution_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="restitution-heure">Heure de restitution</label>
+                            <input type="time" id="restitution-heure" name="restitution_heure">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Services Supplémentaires</h2>
+                    <div class="services-grid">
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="chauffeur">
+                            <span class="checkmark"></span>
+                            <span class="service-text">🚗 Chauffeur privé</span>
+                        </label>
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="assurance">
+                            <span class="checkmark"></span>
+                            <span class="service-text">🛡️ Assurance premium</span>
+                        </label>
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="siege">
+                            <span class="checkmark"></span>
+                            <span class="service-text">🍼 Siège enfant</span>
+                        </label>
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="gps">
+                            <span class="checkmark"></span>
+                            <span class="service-text">📍 GPS inclus</span>
+                        </label>
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="wifi">
+                            <span class="checkmark"></span>
+                            <span class="service-text">📶 WiFi embarqué</span>
+                        </label>
+                        <label class="service-checkbox">
+                            <input type="checkbox" name="services" value="km illimite">
+                            <span class="checkmark"></span>
+                            <span class="service-text">♾️ Kilométrage illimité</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>Commentaires Supplémentaires</h2>
+                    <div class="form-group full-width">
+                        <label for="commentaires">Remarques ou demandes spéciales</label>
+                        <textarea id="commentaires" name="commentaires" rows="4" placeholder="Décrivez vos besoins spécifiques..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit" class="btn-submit">Envoyer la réservation</button>
+                    <p class="form-notice">Réservation confirmée immédiatement. Confirmation sous 24h.</p>
+                </div>
+            </form>
+        </section>
+
+        <section class="advantages">
+            <div class="section-header">
+                <h2 class="section-title">L'Engagement Ultimate X</h2>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage reveal">
+                    <i class="fas fa-truck-fast advantage-icon"></i>
+                    <h3>Livraison Partout</h3>
+                    <p>Votre véhicule livré à domicile, à l'aéroport ou à votre hôtel dans tout le Maroc.</p>
+                </div>
+                <div class="advantage reveal">
+                    <i class="fas fa-file-invoice-dollar advantage-icon"></i>
+                    <h3>Transparence Totale</h3>
+                    <p>Tarifs nets sans frais cachés. Facture proforma émise avant validation.</p>
+                </div>
+                <div class="advantage reveal">
+                    <i class="fas fa-shield-halved advantage-icon"></i>
+                    <h3>Assurance Premium</h3>
+                    <p>Une couverture complète pour rouler en toute sérénité sur les routes du Royaume.</p>
+                </div>
+                <div class="advantage reveal">
+                    <i class="fas fa-map-location-dot advantage-icon"></i>
+                    <h3>Dépôt Partout</h3>
+                    <p>Restituez votre véhicule dans la ville de votre choix. Service flexible.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column brand-info">
+            <a href="index.html" class="footer-logo">ULTIMATE X</a>
+            <p class="footer-description">
+                Leader de la location de véhicules de prestige au Maroc. Excellence, discrétion et service sur-mesure pour une clientèle exigeante.
+            </p>
+            <div class="social-wrapper">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Navigation</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="flotte.html">Notre Flotte Luxe</a></li>
+                <li><a href="services.html">Services Chauffeur</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
+                <li><a href="#">Conditions Générales</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Nos Véhicules</h4>
+            <ul class="footer-links">
+                <li><a href="flotte.html?cat=suv">SUV de Prestige</a></li>
+                <li><a href="flotte.html?cat=berline">Berlines Affaires</a></li>
+                <li><a href="flotte.html?cat=sport">Sportives & GT</a></li>
+                <li><a href="flotte.html?cat=4x4">4x4 & Tout-Terrain</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4 class="footer-title">Contact</h4>
+            <div class="contact-item">
+                <i class="fas fa-location-dot"></i>
+                <p>Avenue des FAR, Ville Nouvelle, Fès, Maroc</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p>+212 (0) 5 24 33 44 56</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p>contact@ultimatex.ma</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <p>Assistance 24h/7j - 7j/7</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <p>&copy; 2026 ULTIMATE X Morocco. Tous droits réservés.</p>
+            <div class="footer-legal-links">
+                <a href="#">Mentions Légales</a>
+                <a href="#">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Modal de confirmation de réservation -->
+    <div id="confirmationModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="success-icon">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="38" stroke="#38bdf8" stroke-width="4" fill="rgba(56, 189, 248, 0.1)"/>
+                        <path d="M25 40L35 50L55 30" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2 class="modal-title">Réservation Confirmée !</h2>
+            </div>
+            <div class="modal-body">
+                <p class="modal-greeting">Merci <strong id="modal-client-name"></strong> !</p>
+                <p class="modal-message">Votre demande de réservation pour <strong id="modal-vehicle-name"></strong> a été enregistrée avec succès.</p>
+                
+                <div class="modal-info-box">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Confirmation envoyée à <strong id="modal-email"></strong></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Réponse sous <strong>24 heures</strong></span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>Urgence : <strong>+212 5 24 33 44 56</strong></span>
+                    </div>
+                </div>
+
+                <div class="modal-next-steps">
+                    <h3>Prochaines étapes :</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Vérification de disponibilité du véhicule</li>
+                        <li><i class="fas fa-check-circle"></i> Confirmation par email sous 24h</li>
+                        <li><i class="fas fa-check-circle"></i> Préparation de votre véhicule</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn-primary" onclick="closeModal()">
+                    <i class="fas fa-check"></i> Parfait, merci !
+                </button>
+                <button class="modal-btn-secondary" onclick="window.location.href='index.html'">
+                    <i class="fas fa-home"></i> Retour à l'accueil
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-open');
+                menuToggle.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('mobile-open') ? 'hidden' : 'initial';
+            });
+
+            // Fermer le menu quand on clique sur un lien
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('mobile-open');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = 'initial';
+                });
+            });
+        }
+
+        // Dates minimales (Aujourd'hui)
+        const today = new Date().toISOString().split('T')[0];
+        const livraisonDate = document.getElementById('livraison-date');
+        const restitutionDate = document.getElementById('restitution-date');
+        
+        if (livraisonDate) livraisonDate.min = today;
+        if (restitutionDate) restitutionDate.min = today;
+
+        // Base de données des véhicules (importée depuis flotte.js)
+        const vehiclesDatabase = {
+            prestige: [
+                { id: 1, name: 'Mercedes Classe S 500', price: 1800, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Diesel/Hybride' },
+                { id: 2, name: 'Mercedes Classe S 580', price: 2200, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Hybride' },
+                { id: 3, name: 'BMW 735 Li', price: 1700, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Diesel' },
+                { id: 4, name: 'BMW 740 Le', price: 1900, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Hybride' },
+                { id: 5, name: 'Audi A8 L 55 TFSI', price: 1750, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Essence' },
+                { id: 6, name: 'Audi A8 L 60 TDI', price: 1950, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Diesel' },
+                { id: 7, name: 'Porsche Panamera 4', price: 2000, img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Hybride' },
+                { id: 8, name: 'Porsche Panamera Turbo', price: 2800, img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Essence' },
+                { id: 9, name: 'Bentley Flying Spur', price: 3500, img: 'https://images.unsplash.com/photo-1563720223185-11003d516935?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'V8 Essence' },
+                { id: 10, name: 'Bentley Continental GT', price: 3200, img: 'https://images.unsplash.com/photo-1563720223185-11003d516935?w=500', transmission: 'Automatique', passengers: '4 places', fuel: 'V8 Essence' },
+                { id: 11, name: 'Rolls-Royce Ghost', price: 5500, img: 'https://images.unsplash.com/photo-1631295868223-63265b40d9e4?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'V12 Essence' },
+                { id: 12, name: 'Rolls-Royce Phantom', price: 7500, img: 'https://images.unsplash.com/photo-1631295868223-63265b40d9e4?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'V12 Essence' },
+                { id: 13, name: 'Mercedes-Maybach S 680', price: 4500, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'V12 Essence' },
+                { id: 14, name: 'Mercedes-Maybach GLS 600', price: 4000, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'V8 Hybride' },
+                { id: 15, name: 'BMW i7 xDrive60', price: 2500, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Électrique' },
+                { id: 16, name: 'Audi e-tron GT', price: 2200, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Électrique' },
+                { id: 17, name: 'Porsche Taycan Turbo', price: 2400, img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Électrique' },
+                { id: 18, name: 'Mercedes EQE 53 AMG', price: 2100, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Électrique' },
+                { id: 19, name: 'Lucid Air Sapphire', price: 3000, img: 'https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Électrique' },
+                { id: 20, name: 'Tesla Model S Plaid', price: 2000, img: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Électrique' }
+            ],
+            suv: [
+                { id: 21, name: 'Range Rover Vogue', price: 2200, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Auto 4x4', passengers: '5 places', fuel: 'Diesel V6' },
+                { id: 22, name: 'Range Rover Sport', price: 2000, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Auto 4x4', passengers: '5 places', fuel: 'Diesel V6' },
+                { id: 23, name: 'Range Rover Autobiography', price: 2800, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Auto 4x4', passengers: '5 places', fuel: 'V8 Essence' },
+                { id: 24, name: 'Mercedes GLS 400d', price: 2100, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Auto 4x4', passengers: '7 places', fuel: 'Diesel' },
+                { id: 25, name: 'Mercedes GLS 580', price: 2600, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Auto 4x4', passengers: '7 places', fuel: 'V8 Essence' },
+                { id: 26, name: 'Mercedes G-Class G63 AMG', price: 3500, img: 'https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=500', transmission: 'Auto 4x4', passengers: '5 places', fuel: 'V8 Essence' },
+                { id: 27, name: 'BMW X7 xDrive40d', price: 1900, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Auto 4x4', passengers: '7 places', fuel: 'Diesel' },
+                { id: 28, name: 'BMW X7 M60i', price: 2400, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Auto 4x4', passengers: '7 places', fuel: 'V8 Essence' },
+                { id: 29, name: 'BMW X5 xDrive40d', price: 1700, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Auto 4x4', passengers: '5 places', fuel: 'Diesel' },
+                { id: 30, name: 'BMW X5 M Competition', price: 2800, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Auto 4x4', passengers: '5 places', fuel: 'V8 Essence' },
+                { id: 31, name: 'Audi Q8 55 TFSI', price: 1850, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Auto 4x4', passengers: '5 places', fuel: 'V6 Essence' },
+                { id: 32, name: 'Audi Q8 e-tron', price: 1950, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Auto 4x4', passengers: '5 places', fuel: 'Électrique' },
+                { id: 33, name: 'Audi Q7 45 TDI', price: 1600, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Auto 4x4', passengers: '7 places', fuel: 'Diesel' },
+                { id: 34, name: 'Porsche Cayenne GTS', price: 2300, img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500', transmission: 'Auto 4x4', passengers: '5 places', fuel: 'V8 Essence' },
+                { id: 35, name: 'Porsche Cayenne Turbo', price: 2900, img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500', transmission: 'Auto 4x4', passengers: '5 places', fuel: 'V8 Essence' },
+                { id: 36, name: 'Porsche Cayenne E-Hybrid', price: 2100, img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500', transmission: 'Auto 4x4', passengers: '5 places', fuel: 'Hybride' },
+                { id: 37, name: 'Land Rover Defender 110', price: 1800, img: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=500', transmission: 'Auto 4x4', passengers: '6 places', fuel: 'Diesel' },
+                { id: 38, name: 'Land Rover Discovery', price: 1500, img: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=500', transmission: 'Auto 4x4', passengers: '7 places', fuel: 'Diesel' },
+                { id: 39, name: 'Cadillac Escalade', price: 2000, img: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500', transmission: 'Automatique', passengers: '8 places', fuel: 'V8 Essence' },
+                { id: 40, name: 'Lincoln Navigator', price: 1800, img: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500', transmission: 'Automatique', passengers: '8 places', fuel: 'V6 Twin-Turbo' }
+            ],
+            sport: [
+                { id: 41, name: 'Porsche 911 Carrera S', price: 2500, img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500', transmission: 'PDK', passengers: '4 places', fuel: 'Flat-6 Essence' },
+                { id: 42, name: 'Porsche 911 Turbo S', price: 4000, img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500', transmission: 'PDK', passengers: '4 places', fuel: 'Flat-6 Turbo' },
+                { id: 43, name: 'Porsche 911 GT3 RS', price: 5000, img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500', transmission: 'PDK', passengers: '2 places', fuel: 'Flat-6 Essence' },
+                { id: 44, name: 'Ferrari F8 Tributo', price: 4500, img: 'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=500', transmission: 'F1', passengers: '2 places', fuel: 'V8 Twin-Turbo' },
+                { id: 45, name: 'Ferrari SF90 Stradale', price: 6000, img: 'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=500', transmission: 'F1', passengers: '2 places', fuel: 'V8 Hybride' },
+                { id: 46, name: 'Ferrari Roma', price: 4000, img: 'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=500', transmission: 'F1', passengers: '4 places', fuel: 'V8 Twin-Turbo' },
+                { id: 47, name: 'Lamborghini Huracán EVO', price: 4200, img: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=500', transmission: 'LDA', passengers: '2 places', fuel: 'V10 Essence' },
+                { id: 48, name: 'Lamborghini Huracán STO', price: 5500, img: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=500', transmission: 'LDA', passengers: '2 places', fuel: 'V10 Essence' },
+                { id: 49, name: 'Lamborghini Aventador S', price: 6500, img: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=500', transmission: 'LDA', passengers: '2 places', fuel: 'V12 Essence' },
+                { id: 50, name: 'McLaren 720S', price: 4800, img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500', transmission: 'Automatique', passengers: '2 places', fuel: 'V8 Twin-Turbo' },
+                { id: 51, name: 'McLaren 765LT', price: 5800, img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500', transmission: 'Automatique', passengers: '2 places', fuel: 'V8 Twin-Turbo' },
+                { id: 52, name: 'McLaren Artura', price: 5000, img: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500', transmission: 'Automatique', passengers: '2 places', fuel: 'V6 Hybride' },
+                { id: 53, name: 'BMW M4 Competition', price: 1800, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Automatique', passengers: '4 places', fuel: 'I6 Twin-Turbo' },
+                { id: 54, name: 'BMW M5 Competition', price: 2200, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'V8 Twin-Turbo' },
+                { id: 55, name: 'Mercedes-AMG GT 63', price: 2800, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Automatique', passengers: '4 places', fuel: 'V8 Twin-Turbo' },
+                { id: 56, name: 'Mercedes-AMG GT R', price: 3500, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Automatique', passengers: '2 places', fuel: 'V8 Twin-Turbo' },
+                { id: 57, name: 'Audi RS e-tron GT', price: 2400, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Électrique' },
+                { id: 58, name: 'Audi R8 V10 Performance', price: 3200, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'S-Tronic', passengers: '2 places', fuel: 'V10 Essence' },
+                { id: 59, name: 'Nissan GT-R R35', price: 2000, img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500', transmission: 'DCT', passengers: '4 places', fuel: 'V6 Twin-Turbo' },
+                { id: 60, name: 'Jaguar F-Type R', price: 1900, img: 'https://images.unsplash.com/photo-1542362567-b07e54358753?w=500', transmission: 'Automatique', passengers: '2 places', fuel: 'V8 Essence' }
+            ],
+            berline: [
+                { id: 61, name: 'Mercedes Classe E 300', price: 800, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Diesel' },
+                { id: 62, name: 'Mercedes Classe E 350e', price: 950, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Hybride' },
+                { id: 63, name: 'BMW 520i', price: 750, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Essence' },
+                { id: 64, name: 'BMW 530e', price: 900, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Hybride' },
+                { id: 65, name: 'Audi A6 40 TDI', price: 700, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Diesel' },
+                { id: 66, name: 'Audi A6 55 TFSIe', price: 850, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Hybride' },
+                { id: 67, name: 'Audi A7 55 TFSI', price: 1100, img: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'V6 Essence' },
+                { id: 68, name: 'Mercedes CLS 450', price: 1300, img: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'I6 Turbo' },
+                { id: 69, name: 'BMW 8 Series Gran Coupe', price: 1800, img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'V8 Essence' },
+                { id: 70, name: 'Porsche Panamera 4S', price: 2200, img: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'V8 Essence' },
+                { id: 71, name: 'Lexus ES 300h', price: 850, img: 'https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=500', transmission: 'CVT', passengers: '5 places', fuel: 'Hybride' },
+                { id: 72, name: 'Lexus LS 500h', price: 1600, img: 'https://images.unsplash.com/photo-1555626906-fcf10d6851b4?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'V6 Hybride' },
+                { id: 73, name: 'Volvo S90 Recharge', price: 900, img: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Hybride' },
+                { id: 74, name: 'Volvo XC90 Recharge', price: 1100, img: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500', transmission: 'Automatique', passengers: '7 places', fuel: 'Hybride' }
+            ],
+            economique: [
+                { id: 75, name: 'Dacia Logan', price: 250, img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500', transmission: 'Manuelle', passengers: '5 places', fuel: 'Essence' },
+                { id: 76, name: 'Renault Clio', price: 300, img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500', transmission: 'Manuelle', passengers: '5 places', fuel: 'Essence' },
+                { id: 77, name: 'Peugeot 208', price: 320, img: 'https://images.unsplash.com/photo-1542362567-b07e54358753?w=500', transmission: 'Manuelle', passengers: '5 places', fuel: 'Essence' },
+                { id: 78, name: 'Hyundai i20', price: 290, img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500', transmission: 'Manuelle', passengers: '5 places', fuel: 'Essence' },
+                { id: 79, name: 'Toyota Yaris', price: 350, img: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500', transmission: 'Automatique', passengers: '5 places', fuel: 'Hybride' },
+                { id: 80, name: 'Volkswagen Polo', price: 330, img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500', transmission: 'Manuelle', passengers: '5 places', fuel: 'Essence' }
+            ],
+            van: [
+                { id: 81, name: 'Mercedes Classe V', price: 1000, img: 'https://images.unsplash.com/photo-1527786356703-4b100091cd2c?w=500', transmission: 'Automatique', passengers: '8 places', fuel: 'Diesel' },
+                { id: 82, name: 'Vito Tourer', price: 700, img: 'https://images.unsplash.com/photo-1527786356703-4b100091cd2c?w=500', transmission: 'Automatique', passengers: '9 places', fuel: 'Diesel' },
+                { id: 83, name: 'Ford Tourneo Custom', price: 600, img: 'https://images.unsplash.com/photo-1562519819-016136bec3b6?w=500', transmission: 'Automatique', passengers: '9 places', fuel: 'Diesel' },
+                { id: 84, name: 'Toyota Alphard', price: 1200, img: 'https://images.unsplash.com/photo-1506015391300-4802dc74e8a8?w=500', transmission: 'CVT', passengers: '7 places', fuel: 'Hybride' },
+                { id: 85, name: 'Toyota Granvia', price: 1000, img: 'https://images.unsplash.com/photo-1506015391300-4802dc74e8a8?w=500', transmission: 'Automatique', passengers: '8 places', fuel: 'Diesel' },
+                { id: 86, name: 'Citroën SpaceTourer', price: 550, img: 'https://images.unsplash.com/photo-1562519819-016136bec3b6?w=500', transmission: 'Automatique', passengers: '8 places', fuel: 'Diesel' }
+            ]
+        };
+
+        // Gestion de la sélection de catégorie
+        const categorieSelect = document.getElementById('categorie-vehicule');
+        const vehiculeSelect = document.getElementById('vehicule-specifique');
+        const vehiclePreview = document.getElementById('vehicle-preview');
+
+        categorieSelect.addEventListener('change', function() {
+            const category = this.value;
+            vehiculeSelect.innerHTML = '<option value="">Choisissez un véhicule</option>';
+            vehiclePreview.style.display = 'none';
+
+            if (category && vehiclesDatabase[category]) {
+                vehiclesDatabase[category].forEach(vehicle => {
+                    const option = document.createElement('option');
+                    option.value = vehicle.id;
+                    option.textContent = `${vehicle.name} - ${vehicle.price} DH/jour`;
+                    option.dataset.vehicle = JSON.stringify(vehicle);
+                    vehiculeSelect.appendChild(option);
+                });
+            }
+        });
+
+        // Gestion de la sélection de véhicule
+        vehiculeSelect.addEventListener('change', function() {
+            const selectedOption = this.options[this.selectedIndex];
+            
+            if (selectedOption.value && selectedOption.dataset.vehicle) {
+                const vehicle = JSON.parse(selectedOption.dataset.vehicle);
+                
+                // Afficher le preview
+                document.getElementById('preview-img').src = vehicle.img;
+                document.getElementById('preview-name').textContent = vehicle.name;
+                document.getElementById('preview-category').textContent = categorieSelect.options[categorieSelect.selectedIndex].text.split('(')[0];
+                document.getElementById('preview-transmission').textContent = vehicle.transmission;
+                document.getElementById('preview-passengers').textContent = vehicle.passengers;
+                document.getElementById('preview-price').textContent = `${vehicle.price} DH`;
+                
+                vehiclePreview.style.display = 'grid';
+            } else {
+                vehiclePreview.style.display = 'none';
+            }
+        });
+
+        // Form submission
+        const reservationForm = document.getElementById('reservationForm');
+        if (reservationForm) {
+            reservationForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                
+                // Collect checked services
+                const services = [];
+                document.querySelectorAll('input[name="services"]:checked').forEach(cb => {
+                    services.push(cb.parentElement.querySelector('.service-text').innerText);
+                });
+                data.services = services;
+
+                // Récupérer le véhicule sélectionné
+                const vehiculeSelect = document.getElementById('vehicule-specifique');
+                const selectedOption = vehiculeSelect.options[vehiculeSelect.selectedIndex];
+                if (selectedOption.dataset.vehicle) {
+                    const vehicle = JSON.parse(selectedOption.dataset.vehicle);
+                    data.vehicule_details = {
+                        nom: vehicle.name,
+                        prix: vehicle.price,
+                        transmission: vehicle.transmission,
+                        places: vehicle.passengers
+                    };
+                }
+
+                console.log("Envoi de la réservation:", data);
+                
+                // Afficher le modal de confirmation professionnel
+                const vehicleName = data.vehicule_details ? data.vehicule_details.nom : 'votre véhicule';
+                showConfirmationModal(data.nom, vehicleName, data.email);
+                
+                this.reset();
+                vehiclePreview.style.display = 'none';
+            });
+        }
+
+        // Fonction pour afficher le modal de confirmation
+        function showConfirmationModal(clientName, vehicleName, email) {
+            document.getElementById('modal-client-name').textContent = clientName;
+            document.getElementById('modal-vehicle-name').textContent = vehicleName;
+            document.getElementById('modal-email').textContent = email;
+            
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fonction pour fermer le modal
+        function closeModal() {
+            const modal = document.getElementById('confirmationModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'initial';
+        }
+
+        // Fermer le modal en cliquant sur l'overlay
+        document.getElementById('confirmationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        const observerOptions = { threshold: 0.15 };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        reveals.forEach(reveal => {
+            reveal.style.opacity = '0';
+            reveal.style.transform = 'translateY(30px)';
+            reveal.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+            observer.observe(reveal);
+        });
+    </script>
+</body>
+</html>

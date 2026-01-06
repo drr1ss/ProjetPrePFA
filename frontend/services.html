@@ -22,17 +22,17 @@
     <header>
         <nav id="navbar">
             <a href="index.html" class="logo">ULTIMATE X</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="flotte.html">Flotte</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
-            </ul>
             <button class="mobile-menu-toggle" aria-label="Ouvrir le menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="flotte.html">Flotte</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li class="btn-contact"><a href="reservation.html">Réserver une Voiture</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -171,7 +171,7 @@
                         <li>Assistance 24/7</li>
                         <li>Livraison aéroport/火车站</li>
                     </ul>
-                    <a href="devis.html?service=day" class="btn-pricing">Demander un devis</a>
+                    <a href="reservation.html?service=day" class="btn-pricing">Faire une reservation</a>
                 </div>
 
                 <div class="pricing-card featured">
@@ -185,7 +185,7 @@
                         <li>Entretien inclus</li>
                         <li>Reprise flexible</li>
                     </ul>
-                    <a href="devis.html?service=long" class="btn-pricing featured-btn">Nous contacter</a>
+                    <a href="reservation.html?service=long" class="btn-pricing featured-btn">Nous contacter</a>
                 </div>
 
                 <div class="pricing-card">
@@ -198,7 +198,7 @@
                         <li>Suivi du vol</li>
                         <li>Eau & snacks</li>
                     </ul>
-                    <a href="devis.html?service=transfer" class="btn-pricing">Réserver</a>
+                    <a href="reservation.html?service=transfer" class="btn-pricing">Réserver</a>
                 </div>
             </div>
         </section>
@@ -241,7 +241,7 @@
             <p>Choisissez votre véhicule et réservez en quelques clics.</p>
             <div class="cta-buttons">
                 <a href="flotte.html" class="btn-cta primary">Voir la Flotte</a>
-                <a href="devis.html" class="btn-cta secondary">Demander un Devis</a>
+                <a href="reservation.html" class="btn-cta secondary">Faire une reservation</a>
             </div>
         </section>
     </main>
@@ -267,7 +267,7 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="flotte.html">Notre Flotte Luxe</a></li>
                 <li><a href="services.html">Services Chauffeur</a></li>
-                <li><a href="devis.html">Réservation</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
                 <li><a href="#">Conditions Générales</a></li>
             </ul>
         </div>
@@ -334,6 +334,15 @@
                 navLinks.classList.toggle('mobile-open');
                 menuToggle.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('mobile-open') ? 'hidden' : 'initial';
+            });
+
+            // Fermer le menu quand on clique sur un lien
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('mobile-open');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = 'initial';
+                });
             });
         }
 

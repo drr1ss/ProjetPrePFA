@@ -810,8 +810,8 @@ nav a:hover::after, nav a.active::after {
 }
 
 /* Mobile Menu Overlay */
+/* Mobile Menu Overlay */
 nav ul.mobile-open {
-    margin-top: 15rem;
     display: flex;
     position: fixed;
     top: 0;

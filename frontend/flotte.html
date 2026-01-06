@@ -25,7 +25,7 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="flotte.html" class="active">Flotte</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li class="btn-contact"><a href="devis.html">Demander un Devis</a></li>
+                <li class="btn-contact"><a href="reservation.html">Réserver une Voiture</a></li>
             </ul>
             <button class="mobile-menu-toggle" aria-label="Ouvrir le menu">
                 <span></span>
@@ -92,7 +92,7 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="flotte.html">Notre Flotte Luxe</a></li>
                 <li><a href="services.html">Services Chauffeur</a></li>
-                <li><a href="devis.html">Réservation</a></li>
+                <li><a href="reservation.html">Réservation</a></li>
                 <li><a href="#">Conditions Générales</a></li>
             </ul>
         </div>
@@ -155,11 +155,22 @@
         const menuToggle = document.querySelector('.mobile-menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('mobile-open');
-            menuToggle.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('mobile-open') ? 'hidden' : 'initial';
-        });
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('mobile-open');
+                menuToggle.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('mobile-open') ? 'hidden' : 'initial';
+            });
+
+            // Fermer le menu quand on clique sur un lien
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('mobile-open');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = 'initial';
+                });
+            });
+        }
 
         // Scroll reveal animation
         const reveals = document.querySelectorAll('.reveal');

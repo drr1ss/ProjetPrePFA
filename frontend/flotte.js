@@ -292,7 +292,7 @@ function createCarCard(car) {
                         <small>À partir de</small>
                         <strong>${car.price.toLocaleString('fr-FR')} DH<span>/jour</span></strong>
                     </div>
-                    <a href="devis.html?car=${encodeURIComponent(car.name)}" class="btn-action">Réserver</a>
+                    <a href="reservation.html?car=${encodeURIComponent(car.name)}" class="btn-action">Réserver</a>
                 </div>
             </div>
         </div>
