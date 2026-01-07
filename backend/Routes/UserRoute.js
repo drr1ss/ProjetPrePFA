@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('../Controllers/UserController');
+const reservationController = require('../Controllers/ReservationController');
 
-// Route POST : http://localhost:5000/api/users/devis
-router.post('/devis', userController.creerDevis);
+// Route POST : /api/reservations
+router.post('/', reservationController.createReservation);
 
 module.exports = router;

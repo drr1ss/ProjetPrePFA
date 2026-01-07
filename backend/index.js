@@ -1,29 +1,37 @@
 require('dotenv').config();
 const express = require('express');
-const cors = require('cors'); // IMPORT DE CORS
+const cors = require('cors');
 const app = express();
-const port = 5000; // CHANGEMENT DE PORT (pour éviter conflit avec React)
-
-
+const port = process.env.PORT || 5000;
 
 // Import de la connexion BDD
-// Vérifie que ton fichier s'appelle bien db.js dans le dossier bdd
-const bddconnect = require('./bdd/db'); // ou './bdd/connect' selon ton nom de fichier
+const bddconnect = require('./bdd/db');
 
-// Import des routes
-// CORRECTION DU CHEMIN (Majuscule 'R' et nom exact du fichier)
+// --- 1. IMPORT DES ROUTES ---
+// On n'importe QUE UserRoutes puisque tu as tout mis dedans
 const UserRoutes = require('./Routes/UserRoute'); 
 
 // MIDDLEWARES
-app.use(express.json()); // Pour lire le JSON
-app.use(cors()); // Pour autoriser ton site React à parler au Backend
+app.use(express.json());
+app.use(cors());
 
 // Connexion BDD
 bddconnect();
 
-// Utilisation des routes
-// L'URL finale sera : http://localhost:5000/api/v1/users/devis
+// --- 2. UTILISATION DES ROUTES ---
+
+// Route pour les utilisateurs (login/register)
 app.use('/api/v1/users', UserRoutes);
+
+// Route pour les réservations (On utilise AUSSI UserRoutes ici)
+// IMPORTANT : Si tu as mis "router.post('/', ...)" dans UserRoutes pour la réservation,
+// ça marchera quand on appellera http://localhost:5000/api/reservations
+app.use('/api/reservations', UserRoutes); 
+
+// Route de test
+app.get('/', (req, res) => {
+    res.send('Serveur Ultimate X en ligne 🚀');
+});
 
 app.listen(port, () => {
     console.log(`✅ Serveur lancé sur le port ${port}`);
